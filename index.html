@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>DJFarent</title>
+  
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon"/>
+  
+  <link rel="stylesheet" href="css/main.css"/>
+</head>
+<body>
+
+  <div class="welcome-screen">
+    <div class="content">
+      <h1>DJFarent</h1>
+      <p id="tagline">Random shit</p>
+      
+      <div class="enter-btn-wrapper">
+        <a href="#main" class="enter-btn">Enter</a>
+      </div>
+    </div>
+  </div>
+
+  <div id="main" style="display: none; min-height: 100vh; padding: 2rem;">
+    <h2>Welcome to the real site</h2>
+    <p>(We'll build the nav + sections here later)</p>
+  </div>
+
+  <script>
+    const taglines = [
+      "Welcome!",
+      "::CYBERWORLD::",
+      "You should also try Terraria",
+      "Random Daws",
+      "Rendering Dirma",
+      "rolling chinese kush",
+      "random art",
+      "question reality"
+    ];
+
+    let currentIndex = 0;
+    const taglineElement = document.getElementById("tagline");
+
+    function changeTagline() {
+      currentIndex = (currentIndex + 1) % taglines.length;
+      taglineElement.style.opacity = "0";
+
+      setTimeout(() => {
+        taglineElement.textContent = taglines[currentIndex];
+        taglineElement.style.opacity = "1";
+      }, 800);
+    }
+
+    setTimeout(() => {
+      setInterval(changeTagline, 4500);
+    }, 3000);
+
+    document.querySelector(".enter-btn").addEventListener("click", function(e) {
+      e.preventDefault();
+      document.querySelector(".welcome-screen").style.opacity = "0";
+      setTimeout(() => {
+        document.querySelector(".welcome-screen").style.display = "none";
+        document.getElementById("main").style.display = "block";
+      }, 1200);
+    });
+  </script

@@ -79,3 +79,37 @@ body {
     inset 0 0 0 1px rgba(0, 0, 0, 0.9);
   color: #ffffff;
 }
+
+.menu-container {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  pointer-events: none;
+}
+
+.menu-left,
+.menu-right {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  pointer-events: auto;
+}
+
+.menu-left {
+  margin-left: 80px;
+}
+
+.menu-right {
+  margin-right: 80px;
+}
+
+.menu-button {
+  width: 220px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-family: "Bahnsc

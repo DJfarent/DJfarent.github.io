@@ -39,7 +39,7 @@ body::before {
     background-image:
         repeating-linear-gradient(0deg, #cc0000 0px, #cc0000 1px, transparent 1px, transparent 100px),
         repeating-linear-gradient(90deg, #cc0000 0px, #cc0000 1px, transparent 1px, transparent 100px);
-    background-size: 100px 100px, 100px 100px;
+    background-size: 300px 300px, 300px 300px;
     background-position: 0 0, 0 0;
     background-repeat: repeat;
     animation: gridShift 30s linear infinite;
@@ -55,12 +55,12 @@ body::after {
     background-image:
         repeating-linear-gradient(0deg, #cc0000 0px, #cc0000 4px, transparent 4px, transparent 100px),
         repeating-linear-gradient(90deg, #cc0000 0px, #cc0000 4px, transparent 4px, transparent 100px);
-    background-size: 100px 100px, 100px 100px;
+    background-size: 300px 300px, 300px 300px;
     background-position: 0 0, 0 0;
     background-repeat: repeat;
     animation: gridShift 30s linear infinite;
     filter: blur(6px);
-    opacity: 0.25;
+    opacity: 0.15;
 }
 
 @keyframes gridShift {

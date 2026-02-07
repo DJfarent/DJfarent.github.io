@@ -1,46 +1,68 @@
-<script>
-  const words = [
-    "Random Daws",
-    "You'll Love it here!",
-    "VFX",
-    "Random Art",
-    "2026",
-    "::CYBERWORLD::",
-    "Chinese Viruses",
-    "Rolling Kush",
-    "Z-City",
-    "Homicided",
-    "Homigrad",
-    "Gmod",
-    "Madness Combat",
-    "Fulcrum Come in",
-    "LIMP PUMPO",
-    "Question your reality",
-    "Go try Terraria",
-    "Go try Project Zomboid"
-  ];
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CYBERWORLD</title>
 
-  function shuffle(array) {
-    for (let i = array.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [array[i], array[j]] = [array[j], array[i]];
+  <link rel="stylesheet" href="background.css">
+
+  <script>
+    const words = [
+      "Random Daws",
+      "You'll Love it here!",
+      "VFX",
+      "Random Art",
+      "2026",
+      "::CYBERWORLD::",
+      "Chinese Viruses",
+      "Rolling Kush",
+      "Z-City",
+      "Homicided",
+      "Homigrad",
+      "Gmod",
+      "Madness Combat",
+      "Fulcrum Come in",
+      "LIMP PUMPO",
+      "Question your reality",
+      "Go try Terraria",
+      "Go try Project Zomboid"
+    ];
+
+    function shuffle(array) {
+      for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+      }
     }
-  }
 
-  shuffle(words);
+    shuffle(words);
+    let index = 0;
 
-  let index = 0;
+    setInterval(() => {
+      document.title = words[index++];
+      if (index >= words.length) {
+        shuffle(words);
+        index = 0;
+      }
+    }, 1000);
+  </script>
+</head>
 
-  setInterval(() => {
-    document.title = words[index];
-    index++;
+<body>
 
-    if (index >= words.length) {
-      shuffle(words);
-      index = 0;
-    }
-  }, 1000);
-</script>
-<link rel="stylesheet" href="background.css">
+  <header class="topbar">
+    <div class="logo">
+      <span class="logo-red">C</span><span class="logo-white">YBERWORLD</span>
+    </div>
 
-/* updates */
+    <nav class="nav-links">
+      <a href="#main">MAIN</a>
+      <a href="#art">ART</a>
+      <a href="#projects">PROJECTS</a>
+      <a href="#wiki">WIKI</a>
+      <a href="#contact">CONTACT</a>
+    </nav>
+  </header>
+
+</body>
+</html>

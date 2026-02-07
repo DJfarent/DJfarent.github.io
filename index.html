@@ -20,8 +20,24 @@
     "Go try Project Zomboid"
   ];
 
+  function shuffle(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]];
+    }
+  }
+
+  shuffle(words);
+
+  let index = 0;
+
   setInterval(() => {
-    const randomWord = words[Math.floor(Math.random() * words.length)];
-    document.title = randomWord;
-  }, 200);
+    document.title = words[index];
+    index++;
+
+    if (index >= words.length) {
+      shuffle(words);
+      index = 0;
+    }
+  }, 3000);
 </script>

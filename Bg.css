@@ -7,6 +7,7 @@
 html, body {
     height: 100%;
     background: #000;
+    overflow: hidden;
 }
 
 body {
@@ -15,7 +16,6 @@ body {
     position: relative;
     min-height: 100vh;
     color: #fff;
-    overflow: hidden;
 }
 
 h1 {
@@ -40,12 +40,12 @@ body::before {
     pointer-events: none;
     z-index: -2;
     background-image:
-        repeating-linear-gradient(to bottom, #bb0000 0px, #bb0000 1px, transparent 1px, transparent 100px),
-        repeating-linear-gradient(to right, #bb0000 0px, #bb0000 1px, transparent 1px, transparent 100px);
+        repeating-linear-gradient(0deg, #cc0000 0px, #cc0000 2px, transparent 2px, transparent 100px),
+        repeating-linear-gradient(90deg, #cc0000 0px, #cc0000 2px, transparent 2px, transparent 100px);
     background-size: 100px 100px;
     background-repeat: repeat;
-    animation: gridMove 60s linear infinite;
-    opacity: 0.5;
+    animation: gridMove 40s linear infinite;
+    opacity: 0.8;
 }
 
 body::after {
@@ -58,13 +58,13 @@ body::after {
     pointer-events: none;
     z-index: -1;
     background-image:
-        repeating-linear-gradient(to bottom, #bb0000 0px, #bb0000 3px, transparent 3px, transparent 100px),
-        repeating-linear-gradient(to right, #bb0000 0px, #bb0000 3px, transparent 3px, transparent 100px);
+        repeating-linear-gradient(0deg, #cc0000 0px, #cc0000 6px, transparent 6px, transparent 100px),
+        repeating-linear-gradient(90deg, #cc0000 0px, #cc0000 6px, transparent 6px, transparent 100px);
     background-size: 100px 100px;
     background-repeat: repeat;
-    animation: gridMove 60s linear infinite;
-    filter: blur(4px);
-    opacity: 0.15;
+    animation: gridMove 40s linear infinite;
+    filter: blur(6px);
+    opacity: 0.35;
 }
 
 @keyframes gridMove {

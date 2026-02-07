@@ -37,13 +37,11 @@
 
         let currentIndex = 0;
 
-        // Change title every 2 seconds (2000ms) - adjust as needed
         setInterval(() => {
             currentIndex = (currentIndex + 1) % titles.length;
             document.title = titles[currentIndex];
         }, 2000);
 
-        // Optional: Reset to the first title when the tab is focused
         document.addEventListener("visibilitychange", () => {
             if (document.visibilityState === "visible") {
                 document.title = titles[0];

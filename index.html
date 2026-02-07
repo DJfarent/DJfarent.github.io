@@ -2,9 +2,6 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>CYBERWORLD</title>
-
-  <link rel="stylesheet" href="background.css">
 
   <script>
     const words = [
@@ -36,33 +33,41 @@
     }
 
     shuffle(words);
+
     let index = 0;
 
     setInterval(() => {
-      document.title = words[index++];
+      document.title = words[index];
+      index++;
+
       if (index >= words.length) {
         shuffle(words);
         index = 0;
       }
     }, 1000);
   </script>
+
+  <link rel="stylesheet" href="background.css">
 </head>
 
 <body>
 
-  <header class="topbar">
-    <div class="logo">
-      <span class="logo-red">C</span><span class="logo-white">YBERWORLD</span>
+  <div class="menu-container">
+
+    <div class="menu-left">
+      <div class="menu-button">ART</div>
+      <div class="menu-button">VIDEOS</div>
     </div>
 
-    <nav class="nav-links">
-      <a href="#main">MAIN</a>
-      <a href="#art">ART</a>
-      <a href="#projects">PROJECTS</a>
-      <a href="#wiki">WIKI</a>
-      <a href="#contact">CONTACT</a>
-    </nav>
-  </header>
+    <div class="menu-center"></div>
+
+    <div class="menu-right">
+      <div class="menu-button">SOCIALS</div>
+      <div class="menu-button">GAMES</div>
+      <div class="menu-button">PERSONAL</div>
+    </div>
+
+  </div>
 
 </body>
 </html>

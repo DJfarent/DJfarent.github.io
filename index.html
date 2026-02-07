@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -12,14 +13,60 @@
             min-height: 100vh;
             background: #000;
             color: #fff;
+            position: relative;
+            overflow: hidden;
         }
+
         h1 {
             font-size: 4em;
             margin-top: 20vh;
             text-shadow: 0 0 20px #ff00ff, 0 0 40px #00ffff;
         }
+
         p {
             font-size: 1.5em;
+        }
+
+        body::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            z-index: -1;
+            background-image:
+                repeating-linear-gradient(0deg, #ff1a4d 0px, #ff1a4d 3px, transparent 3px, transparent 100px),
+                repeating-linear-gradient(90deg, #ff1a4d 0px, #ff1a4d 3px, transparent 3px, transparent 100px);
+            background-size: 100px 100px, 100px 100px;
+            background-position: 0 0, 0 0;
+            background-repeat: repeat;
+            animation: gridShift 80s linear infinite;
+            opacity: 0.7;
+        }
+
+        body::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            z-index: -1;
+            background-image:
+                repeating-linear-gradient(0deg, #ff0044 0px, #ff0044 8px, transparent 8px, transparent 100px),
+                repeating-linear-gradient(90deg, #ff0044 0px, #ff0044 8px, transparent 8px, transparent 100px);
+            background-size: 100px 100px, 100px 100px;
+            background-position: 0 0, 0 0;
+            background-repeat: repeat;
+            animation: gridShift 80s linear infinite;
+            filter: blur(12px);
+            opacity: 0.5;
+        }
+
+        @keyframes gridShift {
+            from {
+                background-position: 0 0, 0 0;
+            }
+            to {
+                background-position: -100px 100px, -100px 100px;
+            }
         }
     </style>
 </head>

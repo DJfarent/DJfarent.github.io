@@ -1,8 +1,16 @@
+html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background: #000;
+}
+
 body {
     font-family: Arial, sans-serif;
     text-align: center;
     margin: 0;
     padding: 0;
+    height: 100%;
     min-height: 100vh;
     background: #000;
     color: #fff;
@@ -29,13 +37,13 @@ body::before {
     pointer-events: none;
     z-index: -2;
     background-image:
-        repeating-linear-gradient(0deg, #ff0000 0px, #ff0000 2px, transparent 2px, transparent 100px),
-        repeating-linear-gradient(90deg, #ff0000 0px, #ff0000 2px, transparent 2px, transparent 100px);
+        repeating-linear-gradient(0deg, #cc0000 0px, #cc0000 1px, transparent 1px, transparent 100px),
+        repeating-linear-gradient(90deg, #cc0000 0px, #cc0000 1px, transparent 1px, transparent 100px);
     background-size: 100px 100px, 100px 100px;
     background-position: 0 0, 0 0;
     background-repeat: repeat;
-    animation: gridShift 20s linear infinite;
-    opacity: 1;
+    animation: gridShift 30s linear infinite;
+    opacity: 0.6;
 }
 
 body::after {
@@ -45,14 +53,14 @@ body::after {
     pointer-events: none;
     z-index: -1;
     background-image:
-        repeating-linear-gradient(0deg, #ff0000 0px, #ff0000 6px, transparent 6px, transparent 100px),
-        repeating-linear-gradient(90deg, #ff0000 0px, #ff0000 6px, transparent 6px, transparent 100px);
+        repeating-linear-gradient(0deg, #cc0000 0px, #cc0000 4px, transparent 4px, transparent 100px),
+        repeating-linear-gradient(90deg, #cc0000 0px, #cc0000 4px, transparent 4px, transparent 100px);
     background-size: 100px 100px, 100px 100px;
     background-position: 0 0, 0 0;
     background-repeat: repeat;
-    animation: gridShift 20s linear infinite;
-    filter: blur(8px);
-    opacity: 0.4;
+    animation: gridShift 30s linear infinite;
+    filter: blur(6px);
+    opacity: 0.25;
 }
 
 @keyframes gridShift {

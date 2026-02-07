@@ -14,7 +14,7 @@ h1 {
     font-size: 4em;
     margin-top: 20vh;
     color: #ff0066;
-    text-shadow: 0 0 15px #ff0066, 0 0 30px #ff0000;
+    text-shadow: 0 0 5px #ff0066, 0 0 30px #ff0000;
 }
 
 p {

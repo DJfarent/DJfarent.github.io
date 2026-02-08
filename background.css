@@ -71,8 +71,8 @@ body {
   transform: translateX(-50%);
   z-index: 20;
 
-  width: 260px;
-  height: 38px;
+  width: 1000px;
+  height: 42px;
 
   display: flex;
   align-items: center;

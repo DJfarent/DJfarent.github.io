@@ -4,25 +4,23 @@ document.addEventListener("DOMContentLoaded", function () {
 
   if (!pluv || !bubble) return;
 
-  var messages = [
-[
-  "Hi", "Under maintenance", "Nice site", "Hello", "Dont click me", "Meow",
-  "Hello there", "Pls fix bugs", "My name is Pluv!", "Sadsalat hello?", "Z-Cici", "Z-Shitty",
-  "Go sub to @farten1", "Im ginger", "Im made with CSS and JS!", "Im your friend", "Watch out!",
-  "Click me if you dare", "I see you", "I like cookies", "Have you tried HL2?", "Follow the crow",
-  "Bork bork", "Im thinking...", "Insert witty comment here", "Press buttons", "Is it snack time?",
-  "Purr...", "404 fun not found", "I like 4:3 screens", "Beep boop", "I love friends!", "Dont forget to blink",
-  "I see a bug", "Wanna play a game?", "Stay hydrated", "Keep scrolling", "Hello, human",
-  "Not all heroes wear capes", "I am watching you...", "Pluv loves you", "Im invisible sometimes",
-  "Do you like memes?", "Time for tea", "I sing in my free time", "Oops, wrong button", "Im sleepy",
-  "Yay! You clicked me", "Be careful!", "I have secrets", "You found me!", "Do a barrel roll",
-  "Catch me if you can", "I like pixel art", "Keep calm and game on", "I am 1337", "Hello from the other side",
-  "Click me again!", "Boo!", "Follow the light", "I eat bugs (virtual ones)", "I am a CSS wizard",
-  "I come in peace", "Pssst... wanna secret?", "I like potatoes", "Ssshhh...", "Beware the code",
-  "High five!", "You shall not pass!", "Im not a cat"
-]
 
-];
+  var messages = [
+    "Hi", "Under maintenance", "Nice site", "Hello", "Dont click me", "Meow",
+    "Hello there", "Pls fix bugs", "My name is Pluv!", "Sadsalat hello?", "Z-Cici", "Z-Shitty",
+    "Go sub to @farten1", "Im ginger", "Im made with CSS and JS!", "Im your friend", "Watch out!",
+    "Click me if you dare", "I see you", "I like cookies", "Have you tried HL2?", "Follow the crow",
+    "Bork bork", "Im thinking...", "Insert witty comment here", "Press buttons", "Is it snack time?",
+    "Purr...", "404 fun not found", "I like 4:3 screens", "Beep boop", "I love friends!", "Dont forget to blink",
+    "I see a bug", "Wanna play a game?", "Stay hydrated", "Keep scrolling", "Hello, human",
+    "Not all heroes wear capes", "I am watching you...", "Pluv loves you", "Im invisible sometimes",
+    "Do you like memes?", "Time for tea", "I sing in my free time", "Oops, wrong button", "Im sleepy",
+    "Yay! You clicked me", "Be careful!", "I have secrets", "You found me!", "Do a barrel roll",
+    "Catch me if you can", "I like pixel art", "Keep calm and game on", "I am 1337", "Hello from the other side",
+    "Click me again!", "Boo!", "Follow the light", "I eat bugs (virtual ones)", "I am a CSS wizard",
+    "I come in peace", "Pssst... wanna secret?", "I like potatoes", "Ssshhh...", "Beware the code",
+    "High five!", "You shall not pass!", "Im not a cat"
+  ];
 
   pluv.addEventListener("click", function () {
     var msg = messages[Math.floor(Math.random() * messages.length)];

@@ -2,58 +2,13 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-
-  <script>
-    const words = [
-      "Random Daws",
-      "You'll Love it here!",
-      "VFX",
-      "Random Art",
-      "2026",
-      "::CYBERWORLD::",
-      "Chinese Viruses",
-      "Rolling Kush",
-      "Z-City",
-      "Homicided",
-      "Homigrad",
-      "Gmod",
-      "Madness Combat",
-      "Fulcrum Come in",
-      "LIMP PUMPO",
-      "Question your reality",
-      "Go try Terraria",
-      "Go try Project Zomboid",
-      "You are a SlugCat",
-      "Vote for Daniels!",
-      "It was the weed,"
-    ];
-
-    function shuffle(array) {
-      for (let i = array.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [array[i], array[j]] = [array[j], array[i]];
-      }
-    }
-
-    shuffle(words);
-
-    let index = 0;
-
-    setInterval(() => {
-      document.title = words[index];
-      index++;
-
-      if (index >= words.length) {
-        shuffle(words);
-        index = 0;
-      }
-    }, 1000);
-  </script>
-
+  <title>Random Daws</title>
   <link rel="stylesheet" href="background.css">
 </head>
 
 <body>
+
+  <div class="top-username" id="topName">Dirma</div>
 
   <div class="menu-container">
 
@@ -71,6 +26,67 @@
     </div>
 
   </div>
+
+  <script>
+    const words = [
+      "Random Art",
+      "2026",
+      "::CYBERWORLD::",
+      "Chinese Viruses",
+      "Rolling Kush",
+      "Z-City",
+      "Homicided",
+      "Homigrad",
+      "Gmod",
+      "Madness Combat",
+      "Fulcrum Come in",
+      "LIMP PUMPO",
+      "Question your reality",
+      "Go try Terraria",
+      "Go try Project Zomboid",
+      "You are a SlugCat",
+      "Vote for Daniels!",
+      "It was the weed",
+      "Gmod"
+    ];
+
+    function shuffle(array) {
+      for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+      }
+    }
+
+    shuffle(words);
+
+    let index = 0;
+    const topName = document.getElementById("topName");
+
+    setInterval(() => {
+      const text = words[index];
+
+      document.title = text;
+      topName.textContent = text;
+
+      index++;
+      if (index >= words.length) {
+        shuffle(words);
+        index = 0;
+      }
+    }, 1000);
+  </script>
+
+<div id="character-container">
+  <img src="character.png" id="character" alt="Character">
+
+<script src="character.js"></script>
+
+
+</div>
+
+
+</div>
+
 
 </body>
 </html>

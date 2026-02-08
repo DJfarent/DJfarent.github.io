@@ -20,54 +20,38 @@ body {
 }
 
 .menu-container {
-  position: absolute;
+  position: fixed;
   inset: 0;
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 400px;
+  pointer-events: none;
 }
 
 .menu-left,
 .menu-right {
   display: flex;
   flex-direction: column;
-  gap: 28px;
-}
-
-.menu-left {
-  margin-right: 220px;
-}
-
-.menu-right {
-  margin-left: 220px;
-}
-
-.menu-center {
-  width: 260px;
-  height: 520px;
+  gap: 100px;
+  pointer-events: auto;
 }
 
 .menu-button {
   width: 220px;
   height: 48px;
-
   display: flex;
   align-items: center;
   justify-content: center;
-
   color: #e6e6e6;
-  font-family: Arial, Helvetica, sans-serif, bahnschrift;
+  font-family: bahnschrift, Arial, Helvetica, sans-serif;
   font-size: 14px;
   letter-spacing: 1px;
-
   background: rgba(10, 10, 15, 0.85);
-
   border: 1px solid rgba(255, 0, 0, 0.25);
-
   box-shadow:
     0 0 8px rgba(255, 0, 0, 0.35),
     inset 0 0 0 1px rgba(0, 0, 0, 0.9);
-
   cursor: pointer;
   transition: all 0.15s ease;
 }
@@ -80,38 +64,52 @@ body {
   color: #ffffff;
 }
 
-.menu-container {
+.top-username {
   position: fixed;
-  inset: 0;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  pointer-events: none;
-}
+  top: 18px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 20;
 
-.menu-left,
-.menu-right {
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-  pointer-events: auto;
-}
+  width: 260px;
+  height: 38px;
 
-.menu-left {
-  margin-left: 15px;
-}
-
-.menu-right {
-  margin-right: 15px;
-}
-
-.menu-button {
-  width: 220px;
-  height: 48px;
   display: flex;
   align-items: center;
   justify-content: center;
 
-  font-family: "bahnschrift"
+  font-family: Bahnschrift, Arial, sans-serif;
+  font-size: 14px;
+  letter-spacing: 1px;
+  color: #e6e6e6;
 
+  background: rgba(10, 10, 15, 0.85);
+  border: 1px solid rgba(255, 0, 0, 0.25);
+
+  box-shadow:
+    0 0 8px rgb(255, 0, 0, 0.6),
+    inset 0 0 0 1px rgba(0, 0, 0, 0.9);
+
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+#character-container {
+  position: fixed;
+  left: 48.5%;
+  top: 61.5%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 5;
+}
+
+#character {
+  width: 1200px;
+  height: auto;
+
+  filter:
+    drop-shadow(0px 25px 35px rgba(0, 0, 0, 0.6))
+    drop-shadow(0px 0px 25px rgb(74 0 0 / 25%));
+
+  transition: transform 0.15s ease-out;
 }

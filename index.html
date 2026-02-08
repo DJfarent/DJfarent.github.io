@@ -5,73 +5,68 @@
   <title>Random Daws</title>
   <link rel="stylesheet" href="background.css">
 </head>
-
 <body>
 
+ 
   <div class="top-username" id="topName">Dirma</div>
 
-  <div class="menu-container">
 
-    <div class="menu-left">
-      <div class="menu-button">ART</div>
-      <div class="menu-button">VIDEOS</div>
+  <main class="page-content">
+
+   
+    <div class="menu-container">
+  
+      <div class="menu-left">
+        <div class="menu-button">ART</div>
+        <div class="menu-button">VIDEOS</div>
+      </div>
+
+      <div class="menu-center"></div>
+
+     
+      <div class="menu-right">
+        <div class="menu-button">SOCIALS</div>
+        <div class="menu-button">GAMES</div>
+        <div class="menu-button">PERSONAL</div>
+      </div>
     </div>
 
-    <div class="menu-center"></div>
-
-    <div class="menu-right">
-      <div class="menu-button">SOCIALS</div>
-      <div class="menu-button">GAMES</div>
-      <div class="menu-button">PERSONAL</div>
+    <div id="character-container">
+      <img src="character.png" id="character" alt="Character">
     </div>
 
-  </div>
+    <!-- space for scroll-->
+    <div style="height:600px;"></div>
 
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-left">
+      <span>UNDER MAINTENANCE</span>
+    </div>
+    <div class="footer-center">
+      <span>&copy; 2026 Random Daws</span>
+    </div>
+    <div class="footer-right">
+      <span>Discord: fartenone </span>
+    </div>
+  </footer>
+
+  <script src="character.js"></script>
+
+ 
   <script>
     const words = [
-      "Random Art",
-      "2026",
-      "::CYBERWORLD::",
-      "Chinese Viruses",
-      "Rolling Kush",
-      "Z-City",
-      "Homicided",
-      "Homigrad",
-      "Gmod",
-      "Madness Combat",
-      "Fulcrum Come in",
-      "LIMP PUMPO",
-      "Question your reality",
-      "Go try Terraria",
-      "Go try Project Zomboid",
-      "You are a SlugCat",
-      "Vote for Daniels!",
-      "It was the weed",
-      "Gmod",
-      "Fergal",
-      "Half-Life 3 will never come out",
-      "De_nuke.Bsp",
-      "Portal 2",
-      "GM_Construct",
-      "2fort.bsp",
-      "I could eat a horse",
-      "I love my girlfriend 🤤",
-      "Acidic Pussy",
-      "Subscribe 2 @farten1",
-      "Subcribe 2 Wholestolemychips",
-      "Validated by Eggy",
-      "Dirmintor",
-      "She gon call me baby boo",
-      "Evil Gang 2023",
-      "Dj Autism server 2022",
-      "This website under construction",
-      "dead upon shot registering",
-      "missed due to resolver",
-      "Custom Lua",
-      "None of these a Rare",
-      "REPOOOO BUGGGINNN",
-      "The long drive",
-      "BaroTruama"
+      "Random Art", "2026", "::CYBERWORLD::", "Chinese Viruses", "Rolling Kush",
+      "Z-City", "Homicided", "Homigrad", "Gmod", "Madness Combat", "Fulcrum Come in",
+      "LIMP PUMPO", "Question your reality", "Go try Terraria", "Go try Project Zomboid",
+      "You are a SlugCat", "Vote for Daniels!", "It was the weed", "Gmod", "Fergal",
+      "Half-Life 3 will never come out", "De_nuke.Bsp", "Portal 2", "GM_Construct",
+      "2fort.bsp", "I could eat a horse", "I love my girlfriend 🤤", "Acidic Pussy",
+      "Subscribe 2 @farten1", "Subcribe 2 Wholestolemychips", "Validated by Eggy",
+      "Dirmintor", "She gon call me baby boo", "Evil Gang 2023", "Dj Autism server 2022",
+      "This website under construction", "dead upon shot registering", "missed due to resolver",
+      "Custom Lua", "None of these a Rare", "REPOOOO BUGGGINNN", "The long drive", "BaroTruama"
     ];
 
     function shuffle(array) {
@@ -86,12 +81,11 @@
     let index = 0;
     const topName = document.getElementById("topName");
 
+  
     setInterval(() => {
       const text = words[index];
-
-      document.title = text;
+      document.title = text; 
       topName.textContent = text;
-
       index++;
       if (index >= words.length) {
         shuffle(words);
@@ -99,21 +93,6 @@
       }
     }, 1000);
   </script>
-
-<div id="character-container">
-  <img src="character.png" id="character" alt="Character">
-
-<script src="character.js"></script>
-
-<div class="maintenance">UNDER MAINTENANCE</div>
-
-
-
-</div>
-
-
-</div>
-
 
 </body>
 </html>

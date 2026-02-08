@@ -22,9 +22,7 @@ document.addEventListener("DOMContentLoaded", function () {
   "High five!", "You shall not pass!", "Im not a cat"
 ]
 
-]
-
-  ];
+];
 
   pluv.addEventListener("click", function () {
     var msg = messages[Math.floor(Math.random() * messages.length)];

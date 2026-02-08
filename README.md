@@ -1,4 +1,4 @@
-# DJ Farents Website
+# Fartens Website (HEAVILY UNDER CONSTRUCTION)
 
 Welcome to my random website where ill showcase **random works, art and VFX** all that random stuff i enjoy
 

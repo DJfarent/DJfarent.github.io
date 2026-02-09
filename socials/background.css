@@ -1,66 +1,95 @@
-body {
+html, body {
   margin: 0;
   padding: 0;
-  min-height: 100vh;
-  font-family: "AnonymousPro", monospace;
-  background-color: #1b0f0e;
-  position: relative;
+  height: 100%;
+  background: radial-gradient(
+    circle at top,
+    #3a0f1c 0%,
+    #12070a 45%,
+    #000000 100%
+  );
   overflow: hidden;
-  color: #ff4c4c;
-
-  background-image:
-    url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="2" height="2"><rect width="2" height="2" fill="%231b0f0e"/><circle cx="1" cy="1" r="1" fill="%23120b0a"/></svg>');
-  background-size: 50px 50px;
-  animation: moveNoise 10s linear infinite;
-  
-  box-shadow: inset 0 0 0 1000px rgba(255, 255, 255, 0.01);
-}
-
-@keyframes moveNoise {
-  0% { background-position: 0 0; }
-  100% { background-position: 200px 200px; }
+  font-family: monospace;
+  color: #ffb3c1;
 }
 
 body::after {
-  content: '';
+  content: "";
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: repeating-linear-gradient(
-    to bottom,
-    rgba(255,255,255,0.02) 0px,
-    rgba(255,255,255,0.02) 1px,
-    transparent 1px,
-    transparent 3px
+  inset: 0;
+  background: radial-gradient(
+    circle,
+    transparent 60%,
+    rgba(0,0,0,0.75) 100%
   );
   pointer-events: none;
-  z-index: 2;
-  mix-blend-mode: overlay;
 }
 
-.page-content {
-  text-align: center;
-  margin-top: 15vh;
-  z-index: 3;
-  position: relative;
-}
-
-#hostage {
+.crt {
   position: fixed;
-  bottom: 0;
-  right: 0;
-  max-width: 50vw;
-  height: auto;
+  inset: 0;
+  background:
+    repeating-linear-gradient(
+      to bottom,
+      rgba(255,255,255,0.03),
+      rgba(255,255,255,0.03) 1px,
+      transparent 1px,
+      transparent 3px
+    );
+  animation: flicker 0.15s infinite;
   pointer-events: none;
-  image-rendering: pixelated;
-  z-index: 4;
-  opacity: 0.9;
-  filter: drop-shadow(0px 25px 35px rgba(0,0,0,0.6)) drop-shadow(0px 0px 25px rgba(116, 8, 0, 0.432));
-;
 }
 
-#character {
-  transition: opacity 0.15s ease;
+@keyframes flicker {
+  0% { opacity: 0.12; }
+  50% { opacity: 0.18; }
+  100% { opacity: 0.14; }
+}
+
+.image {
+  position: absolute;
+  bottom: 0;
+  opacity: 0;
+  transition:
+    transform 1.2s cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 1.2s ease;
+}
+
+.image img {
+  max-height: 90vh;
+  filter: drop-shadow(0 0 30px rgba(255,80,120,0.35));
+}
+
+.image.left {
+  left: -6%;
+  transform: translateX(-140px);
+}
+
+.image.right {
+  right: -6%;
+  transform: translateX(140px);
+}
+
+.image.show {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.content {
+  position: absolute;
+  top: 12%;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+}
+
+.content h1 {
+  font-size: 3.5rem;
+  letter-spacing: 6px;
+  margin: 0;
+}
+
+.content p {
+  opacity: 0.7;
+  margin-top: 10px;
 }

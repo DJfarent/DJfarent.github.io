@@ -4,7 +4,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
   if (!pluv || !bubble) return;
 
-
   var messages = [
     "Hi", "Under maintenance", "Nice site", "Hello", "Dont click me", "Meow",
     "Hello there", "Pls fix bugs", "My name is Pluv!", "Sadsalat hello?", "Z-Cici", "Z-Shitty",
@@ -22,10 +21,22 @@ document.addEventListener("DOMContentLoaded", function () {
     "High five!", "You shall not pass!", "Im not a cat"
   ];
 
+  var flipping = true;
+
   pluv.addEventListener("click", function () {
+    flipping = false;
+
     var msg = messages[Math.floor(Math.random() * messages.length)];
     bubble.textContent = msg;
     bubble.style.opacity = "1";
+
+    pluv.style.transition = "transform 0.2s";
+    pluv.style.transform = "translateY(-15px)"; // bounce only
+
+    setTimeout(function () {
+      pluv.style.transform = "translateY(0)"; // original
+      flipping = true;
+    }, 200);
 
     clearTimeout(window._pluvTimer);
     window._pluvTimer = setTimeout(function () {
@@ -34,6 +45,7 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   function randomFlip() {
+    if (!flipping) return;
     if (Math.random() > 0.5) {
       pluv.style.transform = "scaleX(-1)";
     } else {

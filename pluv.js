@@ -31,10 +31,15 @@ document.addEventListener("DOMContentLoaded", function () {
     bubble.style.opacity = "1";
 
     pluv.style.transition = "transform 0.2s";
-    pluv.style.transform = "translateY(-15px)"; // bounce only
+    bubble.style.transition = "transform 0.2s";
+
+    // Move Pluv
+    pluv.style.transform = "translateY(-15px)";
+    bubble.style.transform = "translateY(-15px)";
 
     setTimeout(function () {
-      pluv.style.transform = "translateY(0)"; // original
+      pluv.style.transform = "translateY(0)";
+      bubble.style.transform = "translateY(0)";
       flipping = true;
     }, 200);
 

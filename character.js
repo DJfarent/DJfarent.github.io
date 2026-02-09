@@ -21,8 +21,8 @@ document.addEventListener("mousemove", (e) => {
   const width = window.innerWidth;
 
   let newState;
-  const leftEdge = width * 0.25;
-  const rightEdge = width * 0.75;
+  const leftEdge = width * 0.37;
+  const rightEdge = width * 0.63;
 
   if (x < leftEdge) {
     newState = "left";

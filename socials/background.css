@@ -60,3 +60,7 @@ body::after {
   filter: drop-shadow(0px 25px 35px rgba(0,0,0,0.6)) drop-shadow(0px 0px 25px rgba(116, 8, 0, 0.432));
 ;
 }
+
+#character {
+  transition: opacity 0.15s ease;
+}

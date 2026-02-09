@@ -5,20 +5,22 @@ document.addEventListener("DOMContentLoaded", function () {
   if (!pluv || !bubble) return;
 
   var messages = [
-    "Hi", "Under maintenance", "Nice site", "Hello", "Dont click me", "Meow",
-    "Hello there", "Pls fix bugs", "My name is Pluv!", "Sadsalat hello?", "Z-Cici", "Z-Shitty",
-    "Go sub to @farten1", "Im ginger", "Im made with CSS and JS!", "Im your friend", "Watch out!",
-    "Click me if you dare", "I see you", "I like cookies", "Have you tried HL2?", "Follow the crow",
-    "Bork bork", "Im thinking...", "Insert witty comment here", "Press buttons", "Is it snack time?",
-    "Purr...", "404 fun not found", "I like 4:3 screens", "Beep boop", "I love friends!", "Dont forget to blink",
-    "I see a bug", "Wanna play a game?", "Stay hydrated", "Keep scrolling", "Hello, human",
-    "Not all heroes wear capes", "I am watching you...", "Pluv loves you", "Im invisible sometimes",
-    "Do you like memes?", "Time for tea", "I sing in my free time", "Oops, wrong button", "Im sleepy",
-    "Yay! You clicked me", "Be careful!", "I have secrets", "You found me!", "Do a barrel roll",
-    "Catch me if you can", "I like pixel art", "Keep calm and game on", "I am 1337", "Hello from the other side",
-    "Click me again!", "Boo!", "Follow the light", "I eat bugs (virtual ones)", "I am a CSS wizard",
-    "I come in peace", "Pssst... wanna secret?", "I like potatoes", "Ssshhh...", "Beware the code",
-    "High five!", "You shall not pass!", "Im not a cat"
+   "Hi", "Under Maintenance", "Nice Site", "Hello", "Dont Click Me", "Meow",
+  "Hello There", "Pls Fix Bugs", "My Name Is Pluv!", "Sadsalat Hello?", "Z-Cici", "Z-Shitty",
+  "Go Sub To @farten1", "Im Ginger", "Im Made With CSS And JS!", "Im Your Friend", "Watch Out!",
+  "Click Me If You Dare", "I See You", "I Like Cookies", "Have You Tried HL2?", "Follow The Crow",
+  "Bork Bork", "Im Thinking...", "Insert Witty Comment Here", "Press Buttons", "Is It Snack Time?",
+  "Purr...", "404 Fun Not Found", "I Like 4:3 Screens", "Beep Boop", "I Love Friends!", "Dont Forget To Blink",
+  "I See A Bug", "Wanna Play A Game?", "Stay Hydrated", "Keep Scrolling", "Hello, Human",
+  "Not All Heroes Wear Capes", "I Am Watching You...", "Pluv Loves You", "Im Invisible Sometimes",
+  "Do You Like Memes?", "Time For Tea", "I Sing In My Free Time", "Oops, Wrong Button", "Im Sleepy",
+  "Yay! You Clicked Me", "Be Careful!", "I Have Secrets", "You Found Me!", "Do A Barrel Roll",
+  "Catch Me If You Can", "I Like Pixel Art", "Keep Calm And Game On", "I Am 1337", "Hello From The Other Side",
+  "Click Me Again!", "Boo!", "Follow The Light", "I Eat Bugs (Virtual Ones)", "I Am A CSS Wizard",
+  "I Come In Peace", "Pssst... Wanna Secret?", "I Like Potatoes", "Ssshhh...", "Beware The Code",
+  "High Five!", "You Shall Not Pass!", "Im Not A Cat", "Whats Your Name?", "I like SubRosa", "Heard of stanard procedures",
+  "Rise and shine…", "Im a fan of Monsota", "I love OXS", "Heard of Nexaco?", "Yeah I LOVE WORLDMODE", "Alex Austin.. Whens the update?",
+  "I like Unturned", "Teamfortress is fun", "I Main Spy", "I love RocketJumping", "Speedrunning is fun", "TrickStab!!"
   ];
 
   var flipping = true;

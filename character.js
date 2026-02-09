@@ -1,11 +1,43 @@
 const character = document.getElementById("character");
 
+const images = {
+  left: "2.png",
+  center: "1.png",
+  right: "3.png"
+};
+
+character.src = images.center;
+
+let currentState = "center";
+
+const scales = {
+  left: 1.45,
+  center: 1.5,
+  right: 1.5
+};
+
 document.addEventListener("mousemove", (e) => {
-  const centerX = window.innerWidth / 1;
-  const centerY = window.innerHeight / 1;
+  const x = e.clientX;
+  const width = window.innerWidth;
 
-  const offsetX = (e.clientX - centerX) * 0.01;
-  const offsetY = (e.clientY - centerY) * 0.01;
+  let newState;
+  const leftEdge = width * 0.25;
+  const rightEdge = width * 0.75;
 
-  character.style.transform = `translate(${offsetX}px, ${offsetY}px)`;
+  if (x < leftEdge) {
+    newState = "left";
+  } else if (x > rightEdge) {
+    newState = "right";
+  } else {
+    newState = "center";
+  }
+
+  if (newState !== currentState) {
+    currentState = newState;
+    character.src = images[newState];
+    character.style.setProperty("--char-scale", scales[newState]);
+  }
 });
+
+character.src = images.center;
+character.style.setProperty("--char-scale", scales.center);

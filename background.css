@@ -159,3 +159,7 @@ body {
   transition: opacity 0.25s ease;
   pointer-events: none;
 }
+
+.menu-button {
+    text-decoration: none;
+}

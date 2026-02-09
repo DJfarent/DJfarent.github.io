@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Socials Page</title>
+  <link rel="stylesheet" href="../background.css">
+</head>
+<body>
+
+  <div class="top-username" id="topName">Dirma</div>
+
+  <main class="page-content">
+    <div style="margin-top: 200px; text-align: center; color: #ff4c4c;">
+      <h1>Socials Page</h1>
+      <p>Page coming soon</p>
+    </div>
+    <div style="height:400px;"></div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-left">
+      <span>UNDER MAINTENANCE</span>
+    </div>
+    <div class="footer-center">
+      <span>&copy; 2026 @Farten1</span>
+    </div>
+    <div class="footer-right">
+      <span>Discord: fartenone</span>
+    </div>
+  </footer>
+
+  <div id="pluv-container">
+    <img src="../pluv.png" id="pluv" alt="pluv">
+    <div id="pluv-bubble"></div>
+  </div>
+
+  <script src="../pluv.js"></script>
+  <script>
+    const words = ["Socials Page", "Under Construction", "::CYBERWORLD::"];
+    let index = 0;
+    const topName = document.getElementById("topName");
+    setInterval(() => {
+      topName.textContent = words[index];
+      index++;
+      if (index >= words.length) index = 0;
+    }, 1000);
+  </script>
+
+</body>
+</html>

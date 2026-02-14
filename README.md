@@ -42,3 +42,6 @@ Got ideas, feedback, or just want to say hi? Reach out:
 ---
 
 > “I Do not see failure.”
+
+
+...

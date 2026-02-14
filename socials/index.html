@@ -1,59 +1,37 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
   <meta charset="UTF-8">
   <title>Socials</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="background.css">
 </head>
 <body>
 
-  <div class="crt"></div>
+<div class="grid"></div>
+<div class="crt"></div>
 
-  <div class="image left">
-    <img src="single.png" alt="single figure">
-  </div>
+<header>
+  <h1>ZELENOMASH <span id="modeToggle">SMOG</span></h1>
+</header>
 
-  <div class="image right">
-    <img src="friends.png" alt="two figures">
-  </div>
+<section class="left-panel">
+  <h2>[ SOCIAL LINKS ]</h2>
 
-  <div class="content">
-    <h1></h1>
-    <p></p>
-  </div>
+  <a class="option" href="https://steamcommunity.com/id/FARTEN1/" target="_blank">Steam</a>
+  <a class="option" href="https://discord.gg/xH29ccXp4N" target="_blank">Discord</a>
+  <a class="option" href="https://www.youtube.com/@Farten1" target="_blank">YouTube</a>
+  <a class="option" href="https://www.tiktok.com/@farten1_" target="_blank">TikTok</a>
+  <a class="option" href="https://www.twitch.tv/farten1_twitch" target="_blank">Twitch</a>
+</section>
 
-  <script>
-    window.addEventListener("load", () => {
-      const left = document.querySelector(".image.left");
-      const right = document.querySelector(".image.right");
-      const title = document.querySelector(".content h1");
-      const text = document.querySelector(".content p");
+<section class="right-panel">
+  <p>
+Text here. place holder 123123
+  </p>
+</section>
 
-      setTimeout(() => left.classList.add("show"), 200);
-      setTimeout(() => right.classList.add("show"), 500);
+<img id="character" src="smog.png" alt="character">
 
-      function type(el, str, delay) {
-        el.textContent = "";
-        el.classList.add("type");
-        el.style.opacity = 1;
-
-        let i = 0;
-        const interval = setInterval(() => {
-          el.textContent += str[i];
-          i++;
-          if (i >= str.length) {
-            clearInterval(interval);
-            el.classList.remove("type");
-            el.classList.add("flicker");
-          }
-        }, delay);
-      }
-
-      setTimeout(() => type(title, "SOCIALS", 80), 900);
-      setTimeout(() => type(text, "links coming soon", 40), 1500);
-    });
-  </script>
-
+<script src="script.js"></script>
 </body>
 </html>

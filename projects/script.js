@@ -5,10 +5,10 @@ const projects = [
   { title: "Project 4", description: "Coming soon!" },
 ];
 
-// Reference to main container
+
 const projectsContainer = document.getElementById('projects');
 
-// Dynamically create project cards
+
 projects.forEach(project => {
   const card = document.createElement('div');
   card.classList.add('project-card');

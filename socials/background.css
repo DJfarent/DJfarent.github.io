@@ -97,9 +97,9 @@ header span:hover {
 
 .right-panel {
   position: absolute;
-  bottom: 350px;
+  bottom: 100px;
   left: 2150px;   
-  font-size: 20px;
+  font-size: 22px;
   line-height: 1.6;
   font-family:Bahnschrift, Arial, sans-serif;
   opacity: 0.85;

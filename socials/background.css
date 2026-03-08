@@ -109,7 +109,7 @@ header span:hover {
 #character {
   position: absolute;
   right: 390px;
-  bottom: 100;
+  top: 25px;
 
   width: 950px;
   height: auto;   

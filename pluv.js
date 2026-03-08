@@ -20,7 +20,9 @@ document.addEventListener("DOMContentLoaded", function () {
   "I Come In Peace", "Pssst... Wanna Secret?", "I Like Potatoes", "Ssshhh...", "Beware The Code",
   "High Five!", "You Shall Not Pass!", "Im Not A Cat", "Whats Your Name?", "I like SubRosa", "Heard of standard procedures?",
   "Rise and shine…", "Im a fan of Monsota", "I love OXS", "Heard of Nexaco?", "Yeah I LOVE WORLDMODE", "Alex Austin.. Whens the update?",
-  "I like Unturned", "Teamfortress is fun", "I Main Spy", "I love RocketJumping", "Speedrunning is fun", "TrickStab!!"
+  "I like Unturned", "Teamfortress is fun", "I Main Spy", "I love RocketJumping", "Speedrunning is fun", "TrickStab!!", "ab di", "doo doo", "ab dulek",
+  "uhh","I would love a AS-VAL","I've been thinking about making a game for abit.","Please subscribe @Farten1","RIP H4RMY.","Tarkov offsets","damianek","Nutella Tricks Class",
+  "By Any Means", "Standard Procedures", "I like physics based games", "Valve Frame", "Heard of Beta Decay?","We dont talk about jamal","Headphones","Strike Force Heroes"
   ];
 
   var flipping = true;

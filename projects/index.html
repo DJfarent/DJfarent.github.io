@@ -2,50 +2,23 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Personal Page</title>
-  <link rel="stylesheet" href="../background.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DJ Farent Projects</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <header>
+    <h1>DJ Farent Projects</h1>
+    <p>all of this is place holder not final product.</p>
+  </header>
 
-  <div class="top-username" id="topName">Dirma</div>
-
-  <main class="page-content">
-    <div style="margin-top: 200px; text-align: center; color: #ff4c4c;">
-      <h1>Projects page</h1>
-      <p>Page coming soon</p>
-      <p>Lots of projects like Homigrad, Bloodshed, Video making, Music... etc</p>
-    </div>
-    <div style="height:400px;"></div>
+  <main id="projects">
   </main>
 
-  <footer class="site-footer">
-    <div class="footer-left">
-      <span>UNDER MAINTENANCE</span>
-    </div>
-    <div class="footer-center">
-      <span>&copy; 2026 @Farten1</span>
-    </div>
-    <div class="footer-right">
-      <span>Discord: fartenone</span>
-    </div>
+  <footer>
+    <p>© 2026 DJ Farent</p>
   </footer>
 
-  <div id="pluv-container">
-    <img src="../pluv.png" id="pluv" alt="pluv">
-    <div id="pluv-bubble"></div>
-  </div>
-
-  <script src="../pluv.js"></script>
-  <script>
-    const words = ["Personal Page", "Under Construction", "::CYBERWORLD::"];
-    let index = 0;
-    const topName = document.getElementById("topName");
-    setInterval(() => {
-      topName.textContent = words[index];
-      index++;
-      if (index >= words.length) index = 0;
-    }, 1000);
-  </script>
-
+  <script src="script.js"></script>
 </body>
 </html>

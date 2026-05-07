@@ -34,5 +34,4 @@ window.addEventListener("DOMContentLoaded", () => {
 
 });
 
-
 // loads stuff from index into here animation stuff 

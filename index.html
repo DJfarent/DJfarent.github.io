@@ -7,47 +7,33 @@
 </head>
 <body>
 
- <body>
-
-<div id="loading-screen">
-
-  <video autoplay muted loop id="loading-video">
-    <source src="loading-bg.mp4" type="video/mp4">
-  </video>
+  <div id="loading-screen">
+    <video autoplay muted loop id="loading-video">
+      <source src="loading-bg.mp4" type="video/mp4">
+    </video>
 
     <div class="loading-spinner"></div>
-  
-  <div class="loading-box">
 
-    <div class="loading-title">INITIALIZING SYSTEM</div>
+    <div class="loading-box">
+      <div class="loading-title">INITIALIZING SYSTEM</div>
 
-    <div id="loading-lines">
-      <p class="load-line">Loading SCRIPT Check...</p>
-      <p class="load-line">Loading HTML...</p>
-      <p class="load-line">Loading CSS...</p>
-      <p class="load-line">Loading JavaScript...</p>
-      <p class="load-line">Building Interface...</p>
-      <p class="load-line">Loading Pluv...</p>
-      <p class="load-line">Spawning Z-City Character...</p>
-      <p class="load-line">Done.</p>
+      <div id="loading-lines">
+        <p class="load-line">Loading SCRIPT Check...</p>
+        <p class="load-line">Loading HTML...</p>
+        <p class="load-line">Loading CSS...</p>
+        <p class="load-line">Loading JavaScript...</p>
+        <p class="load-line">Building Interface...</p>
+        <p class="load-line">Loading Pluv...</p>
+        <p class="load-line">Spawning Z-City Character...</p>
+        <p class="load-line">Done.</p>
+      </div>
     </div>
-
   </div>
-
-</div>
-
-</div>
-
-<script src="loading.js"></script>
 
   <div class="top-username" id="topName">Dirma</div>
 
-
   <main class="page-content">
-
-   
     <div class="menu-container">
-  
       <div class="menu-left">
         <a href="projects/" target="_blank" class="menu-button">PROJECTS</a>
       </div>
@@ -61,9 +47,7 @@
       <img src="character.png" id="character" alt="Character">
     </div>
 
-    <!-- space for scroll-->
     <div style="height:100px;"></div>
-
   </main>
 
   <footer class="site-footer">
@@ -78,9 +62,15 @@
     </div>
   </footer>
 
-  <script src="character.js"></script>
+  <div id="pluv-container">
+    <img src="pluv.png" id="pluv" alt="pluv">
+    <div id="pluv-bubble"></div>
+  </div>
 
- 
+  <script src="loading.js"></script>
+  <script src="character.js"></script>
+  <script src="pluv.js"></script>
+
   <script>
     const words = [
       "Random Art", "2026", "::CYBERWORLD::", "Chinese Viruses", "Rolling Kush",
@@ -98,38 +88,30 @@
       "Heh Check the source"
     ];
 
-    function shuffle(array) {
+    function shuffleArray(array) {
       for (let i = array.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
         [array[i], array[j]] = [array[j], array[i]];
       }
     }
 
-    shuffle(words);
+    shuffleArray(words);
 
-    let index = 0;
-    const topName = document.getElementById("topName");
+    let wordIndex = 0;
+    const topNameElement = document.getElementById("topName");
 
-  
     setInterval(() => {
-      const text = words[index];
-      document.title = text; 
-      topName.textContent = text;
-      index++;
-      if (index >= words.length) {
-        shuffle(words);
-        index = 0;
+      const currentWord = words[wordIndex];
+      document.title = currentWord;
+      topNameElement.textContent = currentWord;
+      wordIndex++;
+      
+      if (wordIndex >= words.length) {
+        shuffleArray(words);
+        wordIndex = 0;
       }
     }, 1000);
   </script>
-
-<div id="pluv-container">
-  <img src="pluv.png" id="pluv" alt="pluv">
-  <div id="pluv-bubble"></div>
-</div>
-
-<script src="pluv.js"></script>
-
 
 </body>
 </html>

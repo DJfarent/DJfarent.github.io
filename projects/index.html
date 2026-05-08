@@ -3,22 +3,64 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>DJ Farent Projects</title>
+  <title>Projects - DJfarent</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <h1>Lots of projects like Homigrad, Bloodshed, Video making, Music... etc</h1>
-    <p>all of this is place holder not final product.</p>
-  </header>
 
-  <main id="projects">
-  </main>
+<div class="grid"></div>
+<div class="crt"></div>
+<div>
+<header class="page-header">
+  <div class="header-content">
+    <h1>[ PROJECTS ]</h1>
+    <a href="https://djfarent.github.io/" class="back-button">← Back to Home</a>
+  </div>
+</header>
 
-  <footer>
-    <p>© 2026 DJ Farent</p>
-  </footer>
+<main class="projects-container">
+  
+  <div class="stats-bar">
+    <div class="stat">
+      <span class="stat-label">REPOS LOADED:</span>
+      <span class="stat-value" id="repo-count">0</span>
+    </div>
+    <div class="stat">
+      <span class="stat-label">TOTAL STARS:</span>
+      <span class="stat-value" id="star-count">0</span>
+    </div>
+    <div class="stat">
+      <span class="stat-label">LANGUAGES:</span>
+      <span class="stat-value" id="language-count">0</span>
+    </div>
+  </div>
+  <div id="loading-state" class="loading-state">
+    <div class="spinner"></div>
+    <p>FETCHING REPOSITORIES...</p>
+  </div>
+  <div id="projects-grid" class="projects-grid">
+  </div>
+  <div id="error-state" class="error-state" style="display: none;">
+    <p>FAILED TO LOAD REPOSITORIES</p>
+    <p>Check your internet connection or GitHub API rate limit</p>
+  </div>
+</main>
 
-  <script src="script.js"></script>
+
+<footer class="site-footer">
+  <div class="footer-left">
+    <span>GITHUB SYNC</span>
+  </div>
+  <div class="footer-center">
+    <span>&copy; Created by @Farten 1 For The Community</span>
+  </div>
+  <div class="footer-right">
+    <span>Updated in Real-Time</span>
+  </div>
+</footer>
+>
+<script src="github-fetch.js"></script>
+<script src="projects.js"></script>
+
 </body>
 </html>

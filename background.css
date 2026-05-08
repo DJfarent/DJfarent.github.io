@@ -11,6 +11,7 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+
   background-image:
     linear-gradient(0deg, rgba(255, 0, 0, 0.25) 1px, transparent 1px),
     linear-gradient(90deg, rgba(255, 0, 0, 0.25) 1px, transparent 1px);
@@ -21,6 +22,77 @@ body {
 @keyframes gridMove {
   from { background-position: 0 0; }
   to { background-position: -320px 320px; }
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-6px); }
+  100% { transform: translateY(0px); }
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+#loading-screen {
+  position: fixed;
+  inset: 0;
+  background: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  font-family: Bahnschrift, Arial, sans-serif;
+  overflow: hidden;
+}
+
+#loading-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+.loading-box {
+  position: relative;
+  z-index: 2;
+  color: #e6e6e6;
+  font-size: 15px;
+  letter-spacing: 1px;
+  text-align: left;
+  animation: float 3s ease-in-out infinite;
+}
+
+.loading-title {
+  margin-bottom: 20px;
+  color: #ff4d4d;
+  font-weight: bold;
+  font-size: 100px;
+}
+
+.load-line {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 0.4s ease;
+}
+
+.load-line.show {
+  opacity: 1;
+  transform: translateY(0px);
+}
+
+.loading-spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid rgba(255, 0, 0, 0.15);
+  border-top: 3px solid #ff4c4c;
+  border-radius: 50%;
+  margin-bottom: -17%;
+  animation: spin 1s linear infinite;
 }
 
 .top-username {
@@ -39,10 +111,11 @@ body {
   color: #e6e6e6;
   background: rgba(10, 10, 15, 0.85);
   border: 1px solid rgba(255, 0, 0, 0.25);
-  box-shadow: 0 0 8px rgb(255,0,0,0.6), inset 0 0 0 1px rgba(0,0,0,0.9);
+  box-shadow: 0 0 8px rgb(255, 0, 0, 0.6), inset 0 0 0 1px rgba(0, 0, 0, 0.9);
   white-space: nowrap;
   overflow: hidden;
 }
+
 
 .page-content {
   position: relative;
@@ -55,14 +128,14 @@ body {
 .menu-container {
   display: flex;
   justify-content: center;
-  gap: 330px; 
-  margin-top: 400px; 
+  gap: 330px;
+  margin-top: 400px;
 }
 
 .menu-left, .menu-right {
   display: flex;
   flex-direction: column;
-  gap: 35px; 
+  gap: 35px;
 }
 
 .menu-button {
@@ -76,17 +149,19 @@ body {
   letter-spacing: 1px;
   background: rgba(10, 10, 15, 0.85);
   border: 1px solid rgba(255, 0, 0, 0.25);
-  box-shadow: 0 0 8px rgba(255,0,0,0.35), inset 0 0 0 1px rgba(0,0,0,0.9);
+  box-shadow: 0 0 8px rgba(255, 0, 0, 0.35), inset 0 0 0 1px rgba(0, 0, 0, 0.9);
   cursor: pointer;
   transition: all 0.15s ease;
+  text-decoration: none;
 }
 
 .menu-button:hover {
   border-color: rgba(255, 80, 80, 0.6);
-  box-shadow: 0 0 12px rgba(255,0,0,0.6), inset 0 0 0 1px rgba(0,0,0,0.9);
+  box-shadow: 0 0 12px rgba(255, 0, 0, 0.6), inset 0 0 0 1px rgba(0, 0, 0, 0.9);
   text-shadow: 0 0 8px #ff4c4c;
   color: #ffffff;
 }
+
 
 #character-container {
   position: absolute;
@@ -100,10 +175,9 @@ body {
   width: 1000px;
   height: auto;
   transform: scale(var(--char-scale, 1));
-  filter: drop-shadow(0px 25px 35px rgba(0,0,0,0.6))
-          drop-shadow(0px 0px 25px rgb(74 0 0 / 25%));
+  filter: drop-shadow(0px 25px 35px rgba(0, 0, 0, 0.6))
+  drop-shadow(0px 0px 25px rgb(74 0 0 / 25%));
 }
-
 
 .site-footer {
   width: 100%;
@@ -113,8 +187,8 @@ body {
   background: rgba(10, 10, 15, 0.85);
   color: #ff4c4c;
   font-size: 34px;
-  border-top: 2px solid rgba(255,0,0,0.25);
-  box-shadow: 0 -0 8px rgba(255,0,0,0.35), inset 0 0 0 1px rgba(0,0,0,0.9);
+  border-top: 2px solid rgba(255, 0, 0, 0.25);
+  box-shadow: 0 0 8px rgba(255, 0, 0, 0.35), inset 0 0 0 1px rgba(0, 0, 0, 0.9);
   z-index: 30;
   gap: 40px;
   margin-top: 10px;
@@ -145,92 +219,14 @@ body {
   bottom: 110px;
   left: 0;
   padding: 20px 20px;
-  background: rgba(10,10,15,0.9);
+  background: rgba(10, 10, 15, 0.9);
   color: #ff4c4c;
   font-family: Bahnschrift, Arial, sans-serif;
   font-size: 20px;
-  border: 1px solid rgba(255,0,0,0.3);
+  border: 1px solid rgba(255, 0, 0, 0.3);
   border-radius: 6px;
   white-space: nowrap;
   opacity: 0;
   transition: opacity 0.25s ease;
   pointer-events: none;
-}
-
-.menu-button {
-    text-decoration: none;
-}
-
-#loading-screen{
-  position:fixed;
-  inset:0;
-  background:#000;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  z-index:9999;
-  font-family:Bahnschrift, Arial, sans-serif;
-  overflow:hidden;
-}
-
-#loading-video{
-  position:absolute;
-  top:0;
-  left:0;
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  z-index:0;
-}
-
-.loading-box{
-  position: relative;
-  z-index: 2;
-
-  color:#e6e6e6;
-  font-size:15px;
-  letter-spacing:1px;
-  text-align:left;
-
-  animation: float 3s ease-in-out infinite;
-}
-
-.loading-title{
-  margin-bottom:20px;
-  color:#ff4d4d;
-  font-weight:bold;
-  font-size:100px;
-}
-
-.load-line{
-  opacity:0;
-  transform:translateY(10px);
-  transition:all .4s ease;
-}
-
-.load-line.show{
-  opacity:1;
-  transform:translateY(0px);
-}
-
-@keyframes float{
-  0%{transform:translateY(0px);}
-  50%{transform:translateY(-6px);}
-  100%{transform:translateY(0px);}
-}
-
-.loading-spinner{
-  width:40px;
-  height:40px;
-  border:3px solid rgba(255,0,0,0.15);
-  border-top:3px solid #ff4c4c;
-  border-radius:50%;
-  margin-bottom:-17%;
-
-  animation: spin 1s linear infinite;
-}
-
-@keyframes spin{
-  from{transform:rotate(0deg);}
-  to{transform:rotate(360deg);}
 }

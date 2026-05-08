@@ -1,43 +1,40 @@
-const character = document.getElementById("character");
+const characterElement = document.getElementById("character");
 
-const images = {
+const characterImages = {
   left: "2.png",
   center: "1.png",
   right: "3.png"
 };
 
-character.src = images.center;
-
-let currentState = "center";
-
-const scales = {
+const characterScales = {
   left: 1.45,
   center: 1.5,
   right: 1.5
 };
 
-document.addEventListener("mousemove", (e) => {
-  const x = e.clientX;
-  const width = window.innerWidth;
+let currentCharacterState = "center";
+characterElement.src = characterImages.center;
+characterElement.style.setProperty("--char-scale", characterScales.center);
 
-  let newState;
-  const leftEdge = width * 0.37;
-  const rightEdge = width * 0.63;
+document.addEventListener("mousemove", (event) => {
+  const mouseX = event.clientX;
+  const viewportWidth = window.innerWidth;
 
-  if (x < leftEdge) {
-    newState = "left";
-  } else if (x > rightEdge) {
-    newState = "right";
+  const leftBoundary = viewportWidth * 0.37;
+  const rightBoundary = viewportWidth * 0.63;
+
+  let newCharacterState;
+  if (mouseX < leftBoundary) {
+    newCharacterState = "left";
+  } else if (mouseX > rightBoundary) {
+    newCharacterState = "right";
   } else {
-    newState = "center";
+    newCharacterState = "center";
   }
 
-  if (newState !== currentState) {
-    currentState = newState;
-    character.src = images[newState];
-    character.style.setProperty("--char-scale", scales[newState]);
+  if (newCharacterState !== currentCharacterState) {
+    currentCharacterState = newCharacterState;
+    characterElement.src = characterImages[newCharacterState];
+    characterElement.style.setProperty("--char-scale", characterScales[newCharacterState]);
   }
 });
-
-character.src = images.center;
-character.style.setProperty("--char-scale", scales.center);

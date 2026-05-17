@@ -9,11 +9,8 @@ document.addEventListener("DOMContentLoaded", async function () {
   const fetcher = new GitHubFetcher("DJfarent");
 
   try {
-    let repositories = await fetcher.fetchRepositories();
-
-    repositories = await generateSummariesForRepos(repositories);
-
-    const stats = fetcher.getStatistics(repositories);
+    let repos = await fetcher.fetchRepositories();
+    const stats = fetcher.getStatistics(repos);
 
     repoCountEl.textContent = stats.totalRepos;
     starCountEl.textContent = stats.totalStars;
@@ -21,8 +18,8 @@ document.addEventListener("DOMContentLoaded", async function () {
 
     loadingState.style.display = "none";
 
-    if (repositories.length > 0) {
-      renderProjects(repositories);
+    if (repos.length > 0) {
+      renderProjects(repos);
     } else {
       projectsGrid.innerHTML = '<p class="no-projects">No public repositories found</p>';
     }
@@ -31,44 +28,18 @@ document.addEventListener("DOMContentLoaded", async function () {
     console.error("Failed to load projects:", error);
     
     loadingState.style.display = "none";
-    
     errorState.style.display = "block";
     projectsGrid.style.display = "none";
   }
 });
-//uses ai to generate repo names
-async function generateSummariesForRepos(repositories) {
-
-  const reposNeedingSummaries = repositories.filter(repo => 
-    !repo.description || repo.description.trim() === ""
-  );
-
-  if (reposNeedingSummaries.length === 0) {
-    return repositories;
-  }
-
-  console.log(`Generating summaries for ${reposNeedingSummaries.length} repos...`);
-
-  for (let repo of reposNeedingSummaries) {
-    try {
-      const summary = await generateRepoSummary(repo);
-      repo.description = summary;
-    } catch (error) {
-      console.warn(`Could not generate summary for ${repo.name}:`, error);
-      repo.description = generateFallbackSummary(repo);
-    }
-  }
-
-  return repositories;
-}
 
 function renderProjects(repositories) {
   const projectsGrid = document.getElementById("projects-grid");
   projectsGrid.innerHTML = "";
 
   repositories.forEach((repo, index) => {
-    const projectCard = createProjectCard(repo, index);
-    projectsGrid.appendChild(projectCard);
+    const card = createProjectCard(repo, index);
+    projectsGrid.appendChild(card);
   });
 }
 
@@ -79,44 +50,45 @@ function createProjectCard(repo, index) {
   card.className = "project-card";
   card.style.animationDelay = `${index * 0.1}s`;
 
-  const updatedDate = new Date(repo.updatedAt);
-  const formattedDate = updatedDate.toLocaleDateString("en-US", {
+  const date = new Date(repo.updatedAt);
+  const dateStr = date.toLocaleDateString("en-US", {
     year: "numeric",
     month: "short",
     day: "numeric"
   });
 
-  const languageColor = getLanguageColor(repo.language);
+  const color = getLanguageColor(repo.language);
+  const desc = repo.description || "No description";
 
   card.innerHTML = `
     <div class="card-header">
       <h3 class="project-name">${escapeHtml(repo.name)}</h3>
-      <span class="project-stars">⭐ ${repo.stars}</span>
+      <span class="project-stars">${repo.stars}</span>
     </div>
 
     <div class="card-body">
-      <p class="project-description">${escapeHtml(repo.description)}</p>
+      <p class="project-description">${escapeHtml(desc)}</p>
 
       <div class="project-meta">
-        <span class="language" style="--lang-color: ${languageColor}">
+        <span class="language" style="--lang-color: ${color}">
           <span class="lang-dot"></span>
           ${escapeHtml(repo.language)}
         </span>
-        <span class="updated">Updated ${formattedDate}</span>
+        <span class="updated">Updated ${dateStr}</span>
       </div>
 
       ${repo.topics.length > 0 ? `
         <div class="project-topics">
-          ${repo.topics.slice(0, 3).map(topic => 
-            `<span class="topic">#${escapeHtml(topic)}</span>`
+          ${repo.topics.slice(0, 3).map(t => 
+            `<span class="topic">${escapeHtml(t)}</span>`
           ).join("")}
         </div>
       ` : ""}
     </div>
 
     <div class="card-footer">
-      <span class="fork-count">🔗 ${repo.forks}</span>
-      <span class="open-indicator">Open in GitHub →</span>
+      <span class="fork-count">${repo.forks} forks</span>
+      <span class="open-indicator">view</span>
     </div>
   `;
 
@@ -124,9 +96,8 @@ function createProjectCard(repo, index) {
 }
 
 function getLanguageColor(language) {
-  const languageColors = {
+  const colors = {
     "JavaScript": "#f1e05a",
-    "TypeScript": "#3178c6",
     "Python": "#3572A5",
     "Java": "#b07219",
     "C++": "#f34b7d",
@@ -134,11 +105,13 @@ function getLanguageColor(language) {
     "HTML": "#e34c26",
     "CSS": "#563d7c",
     "Lua": "#000080",
-    "Shell": "#89e051",
-    "Unspecified": "#cccccc"
+    "Go": "#00ADD8",
+    "Rust": "#CE422B",
+    "TypeScript": "#3178c6",
+    "Shell": "#89e051"
   };
 
-  return languageColors[language] || "#cccccc";
+  return colors[language] || "#999";
 }
 
 function escapeHtml(text) {
